@@ -2,5 +2,6 @@
 a.out
 scratch/*
 !scratch/.gitkeep
+!scratch/*.c
 kr/*
 !kr/*.c
