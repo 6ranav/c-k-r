@@ -67,6 +67,19 @@ the for loop is a generalization of the while loop, within the parentheses there
 
 so it looks something like this - for(initialization (x = 0); condition (x <= 300); increment (x=x+20), these are seperated by semicolons.
 
+one way to declare variables that have a fixed value and never change throughout the program is through symbolic constants, they are defined using #define (example - #define UPPER 300, #define LOWER 0, #define STEP 20)
+
+if you're wondering why it's useful, imagine you use the value UPPER around ten times in your code, and later you need to change the value to something else, you need to change it everywhere else, again you might be thinking why not a variable? because a variable takes up space, can be accidentally changed and doesn't exist before the compiler runs. the symbolic constant does all of it and it is quite literally baked into the code before the compiler even runs, during the preprocessing stage.
+
+however in modern c, const is preferred over #define because it has a type, while #define is just text substitution without any type checking.
+
+in c, text input or output is treated as streams of characters regardless of where it originates from or where it goes to. each text stream is a sequence of characters divided into lines, each line consists of zero or more characters followed by a newline character.
+the standard library has a lot of functions for reading and writing one character at a time but out of them all, getchar() and putchar() are the simplest.
+
+in c, there is a special integer defined in the standard library, with the value of -1, it is usually used to take input until the end of file and it can take input as long as you send a special signal from your os to stop it because there is no way to give the input -1 from your side as - and 1 are treated as two seperate ascii values. it is known as EOF or end of file, to trigger it you need to use ctrl + d on linux and macos and ctrl + z followed by enter on windows. 
+
+
+
 # errors and fixes
 1 -> did not declare function type while writing code
 
