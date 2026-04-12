@@ -60,6 +60,12 @@ the printf and other standard library functions recognize the following specific
 
 there are more such as %e for scientific notation and %lu or %hu for unsigned long or short integers, but they are not that widely used.
 
+the for loop is a generalization of the while loop, within the parentheses there are three parts:
+1. the initialization
+2. the condition
+3. the increment
+
+so it looks something like this - for(initialization (x = 0); condition (x <= 300); increment (x=x+20), these are seperated by semicolons.
 
 # errors and fixes
 1 -> did not declare function type while writing code
