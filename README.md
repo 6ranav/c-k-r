@@ -1,6 +1,6 @@
 # learning the c language
 
-working through K&R as part of a systems programming and better understanding of computers at the deeper level.
+working through k&r as part of a systems programming and better understanding of computers at the deeper level.
 
 ## structure
 
