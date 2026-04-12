@@ -1,4 +1,4 @@
-// Created by hua on 4/12/26 - "Exercise 1-1. Run the ``hello, world'' program on your system. Experiment with leaving out parts of the program, to see what error messages you get."
+// Created on 4/12/26 - "Exercise 1-1. Run the ``hello, world'' program on your system. Experiment with leaving out parts of the program, to see what error messages you get."
 
 #include <stdio.h> //including information about a library for the compiler, standard input/output in this case
 int main() //defining the main function - the execution begins from here
