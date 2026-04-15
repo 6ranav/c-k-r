@@ -86,13 +86,13 @@ to track a previous character, you need to declare a seperate variable and updat
 
 
 # errors and fixes
-1 -> did not declare function type while writing code
+**1 -> did not declare function type while writing code**
 
 error: return type defaults to ‘int’ [-Wimplicit-int] | main()
 
 fix: declare int while calling the main() function -> int main(), and end with return 0;. this is because in c, every function must declare what type it returns. in the case of main(), it needs to return the integer 0 to tell the os that the execution was successful, any other integer and it means there was a problem somewhere (example- returning 1 means its a general error, returning 2 means misuse of shell command or invalid arguments, returning 127 means the command was not found). this is *usually* not a problem, but i compiled it using my terminal with gcc, and i have -Wall and -Wextra enabled, meaning the compilation is strict and the warnings are treated as actual errors.
 
-2 -> part of ex 1.2, using unknown escape sequences 
+**2 -> part of ex 1.2, using unknown escape sequences** 
 
 error: ex-1.2.c: In function ‘main’:
 ex-1.2.c:9:18: warning: unknown escape sequence: ‘\z’
@@ -104,7 +104,7 @@ ex-1.2.c:10:18: warning: unknown escape sequence: ‘\q’
 
 fix: just don't use them, here (in ex-1.2.c) \a and \b didn't show an error because they are valid escape sequences from the standard library but \z and \q did. 
 
-3 -> clion encodes space character literals incorrectly in source files
+**3 -> clion encodes space character literals incorrectly in source files**
 
 error: program logic using ' ' (space literal) never triggers, counts always return 0
 
