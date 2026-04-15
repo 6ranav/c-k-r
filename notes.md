@@ -76,7 +76,12 @@ however in modern c, const is preferred over #define because it has a type, whil
 in c, text input or output is treated as streams of characters regardless of where it originates from or where it goes to. each text stream is a sequence of characters divided into lines, each line consists of zero or more characters followed by a newline character.
 the standard library has a lot of functions for reading and writing one character at a time but out of them all, getchar() and putchar() are the simplest.
 
-in c, there is a special integer defined in the standard library, with the value of -1, it is usually used to take input until the end of file and it can take input as long as you send a special signal from your os to stop it because there is no way to give the input -1 from your side as - and 1 are treated as two seperate ascii values. it is known as EOF or end of file, to trigger it you need to use ctrl + d on linux and macos and ctrl + z followed by enter on windows. 
+in c, there is a special integer defined in the standard library, with the value of -1, it is usually used to take input until the end of file and it can take input as long as you send a special signal from your os to stop it because there is no way to give the input -1 from your side as - and 1 are treated as two seperate ascii values. it is known as EOF or end of file, to trigger it you need to use ctrl + d on linux and macos and ctrl + z followed by enter on windows.
+
+getchar() returns int, not char and it needs to hold EOF (-1) which char can't store, which explains the special combinations required to trigger it (ctrl + d). putchar() outputs a single character, and you can give out anything you like using putchar([argument]).
+
+to track a previous character, you need to declare a seperate variable and update it after every getchar().
+
 
 
 
@@ -98,3 +103,10 @@ ex-1.2.c:10:18: warning: unknown escape sequence: ‘\q’
 |                  ^
 
 fix: just don't use them, here (in ex-1.2.c) \a and \b didn't show an error because they are valid escape sequences from the standard library but \z and \q did. 
+
+3 -> clion encodes space character literals incorrectly in source files
+
+error: program logic using ' ' (space literal) never triggers, counts always return 0
+
+fix: use ascii integer value 32, instead of the string literal when comparing against space in certain conditions.
+the same applies to any regular character types directly in clion. escape sequences like '\t', '\b' and others work correctly since they are not plain characters.

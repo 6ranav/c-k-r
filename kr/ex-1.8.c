@@ -1,3 +1,5 @@
+// Created on 4/15/2026 - "Exercise 1-8. Write a program to count blanks, tabs and newlines"
+
 #include <stdio.h> //including library
 int main() //defining main func
 {
